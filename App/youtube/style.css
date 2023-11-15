@@ -21,7 +21,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: solid 1px lime;
+  /* border: solid 1px lime; */
   gap: 130px;
   padding: 20px 0px;
 }
@@ -110,16 +110,17 @@ input#search::-webkit-search-cancel-button{
   display: none
 }
 
+
 .close{
-  display: none !important;
+  /* display: none !important; */
   position: absolute;
-  right: 10px;
-  padding: 6px;
+  right: 0;
+  padding: 10px;
   border-radius: 50px;
   z-index: 99;
   color: #ccc;
   cursor: pointer;
-}
+} 
 
 .close:hover{
   background-color: rgba(207, 207, 207, 0.352);
@@ -135,7 +136,7 @@ form label:hover .search_icon{
 
 .search_frame{
   display: none;
-  border: solid 1px red;
+  /* border: solid 1px red; */
   width: 40vw; 
   height: 400px; 
   position: absolute; 
@@ -320,47 +321,22 @@ form > button{
 /*       LE MAIN      */
 /* ***************** */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* main{
-  position: relative;
-  border: solid 3px rgb(119, 0, 255);
-  overflow-y: hidden;
-} */
-
-/* SLIDE SECTION */
-/* #slide{
-  border: solid 3px rgb(60, 11, 184);
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: .5s;
-  width: 0;
-} */
-
-
-/* STATIC SLIDE BAR 
-
-main .static_slide_bar{
-  display: none;
+main{
+  /* border: solid 3px blue ; */
   position: absolute;
-  border: solid 1px rgb(255, 0, 208);
-  top: 0;
+  top: 82px;
   bottom: 0;
-  background-color: #fff;
+  right: 0;
+  left: 0;
+  display: flex;
+}
+
+/* STATIC SIDEBAR */
+
+.static_slide_bar{
+  /* border: solid 3px red; */
+  height: 100%;
+  margin-left: 2px;
 }
 
 ul{
@@ -368,14 +344,14 @@ ul{
 }
 
 .static_bar_btn{
-  border: solid 1px green;
+  /* border: solid 1px green; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #000;
   text-decoration: none;
-  padding: 15px 5px;
+  padding: 15px 1px;
   border-radius: 10px;
   font-size: x-small
 }
@@ -422,18 +398,34 @@ ul{
 
 .historique:hover svg{
   stroke-width: 0.5
-} /*
+} 
 
-/* TOGGLE SLIDE BAR 
+
+/* TOGGLE SLIDE BAR */
 
 .toggle_slide_bar{
-  display: none;
-  border: solid 1px red;
+  /* border: solid 3px green; */
+  position: fixed;
+  top: calc(0px + 82px);
+  left: 0;
+  width: 0;
+  height: calc(100% - 82px);
+  overflow-y: scroll;
+  transition: .3s;
   font-size: 14px;
-  white-space: nowrap;
-  width: 100%;
-  height: 100px;
-  overflow-y: scroll
+  /* scrollbar-width: 100px; */
+  display: none;
+}
+.toggle_slide_bar::-webkit-scrollbar{
+  width: 10px;
+  visibility: hidden
+}
+.toggle_slide_bar::-webkit-scrollbar-thumb{
+  background-color: rgb(140, 140, 140);
+  border-radius: 45px
+}
+.toggle_slide_bar:hover::-webkit-scrollbar{
+  visibility: visible
 }
 
 .toggle_slide_bar a{
@@ -447,15 +439,15 @@ ul{
 .five_sct,
 .six_sct,
 .seven_sct{
-  border-bottom: solid 2px blue;
-  padding: 8px;
+  border-bottom: solid 2px rgb(187, 187, 197);
+  padding: 12px;
 }
 
 .toggle_bar_btn{
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 8px 70px 8px 12px;
+  padding: 8px 35px 8px 10px;
   border-radius: 10px;
   transition: background-color ease .1s
 }
@@ -465,7 +457,7 @@ ul{
 }
 
 .three_sct{
-  border-bottom: solid 2px blue;
+  border-bottom: solid 2px rgb(187, 187, 197);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -530,16 +522,42 @@ ul{
   fill: black
 }
 
+.design_xl{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .toggle_slide_bar h3{
   padding: 8px 20px;
 }
 
+.show_toggleBar{
+  display: block;
+  width: 250px
+}
+
+.eight_sct{
+  font-size: small;
+  padding: 15px 25px
+}
+.eight_sct .about,
+.eight_sct .YT-opt{
+  margin-bottom: 15px;
+}
+.eight_sct .copyright{
+  margin-top: 15px;
+}
 
 #containt{
-  border: solid 3px yellow;
-  float: left
-  position: relative;
+  /* border: solid 3px yellow; */
+  transition: margin-left .3s ease;
   width: 100%;
-  height: 100px;
-  float: left 
-} */
+  height: 100%;
+}
+
+
+
+
+
+
