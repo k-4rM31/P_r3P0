@@ -10,6 +10,12 @@
   font-family: 'Roboto', sans-serif;
 }
 
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+}
 
 nav{
   display: flex;
@@ -18,9 +24,6 @@ nav{
   border: solid 1px lime;
   gap: 130px;
   padding: 20px 0px;
-  z-index: 1000;
-  position: sticky;
-  top: 0
 }
 
 /* nav>div{
@@ -37,8 +40,8 @@ nav{
   background-color: none;
   cursor: pointer;
   border-radius: 50px;
-  padding: 8px;
-  transform: translateY(2px)
+  padding: 5px;
+  transform: translateY(3px);
 }
 
 .burger:hover{
@@ -149,7 +152,9 @@ form > button{
   background-color: #ccc;
   cursor: pointer;
   border-radius: 0px 18px 18px 0px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -187,7 +192,7 @@ form > button{
   border-radius: 50px;
 }
 
-.dropbtn span{
+.dropbtn svg{
   display: block;
   padding: 6px;
   border-radius: 50px;
@@ -305,7 +310,7 @@ form > button{
   border-radius: 50px
 }
 
-.account span:nth-child(1){
+.account svg{
   font-size: x-large;
   margin-right: 5px;
 }
@@ -315,13 +320,45 @@ form > button{
 /*       LE MAIN      */
 /* ***************** */
 
-/* STATIC SLIDE BAR */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* main{
+  position: relative;
+  border: solid 3px rgb(119, 0, 255);
+  overflow-y: hidden;
+} */
+
+/* SLIDE SECTION */
+/* #slide{
+  border: solid 3px rgb(60, 11, 184);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: .5s;
+  width: 0;
+} */
+
+
+/* STATIC SLIDE BAR 
 
 main .static_slide_bar{
   display: none;
   position: absolute;
-  border: solid 1px blue;
-  top: 85px;
+  border: solid 1px rgb(255, 0, 208);
+  top: 0;
   bottom: 0;
   background-color: #fff;
 }
@@ -331,7 +368,7 @@ ul{
 }
 
 .static_bar_btn{
-  /* border: solid 1px green; */
+  border: solid 1px green;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -385,14 +422,18 @@ ul{
 
 .historique:hover svg{
   stroke-width: 0.5
-}
+} /*
 
-/* TOGGLE SLIDE BAR */
+/* TOGGLE SLIDE BAR 
 
 .toggle_slide_bar{
+  display: none;
   border: solid 1px red;
-  position: absolute;
-  font-size: 14px
+  font-size: 14px;
+  white-space: nowrap;
+  width: 100%;
+  height: 100px;
+  overflow-y: scroll
 }
 
 .toggle_slide_bar a{
@@ -400,7 +441,12 @@ ul{
   color: #000
 }
 
-.toggle_slide_bar .one_sct, .two_sct{
+.toggle_slide_bar .one_sct,
+.two_sct,
+.four_sct,
+.five_sct,
+.six_sct,
+.seven_sct{
   border-bottom: solid 2px blue;
   padding: 8px;
 }
@@ -408,8 +454,8 @@ ul{
 .toggle_bar_btn{
   display: flex;
   align-items: center;
-  gap: 25px;
-  padding: 8px 80px 8px 12px;
+  gap: 15px;
+  padding: 8px 70px 8px 12px;
   border-radius: 10px;
   transition: background-color ease .1s
 }
@@ -424,12 +470,76 @@ ul{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 8px 20px;
+  padding: 8px
 }
 .three_sct .account{
   margin: 10px 0px 5px 0px;
 }
 
-.four_sct .toggle_bar_btn:hover svg .small_fire{
-  fill: bl
+.four_sct .toggle_bar_btn.explore:hover svg .small_fire{
+  fill: white
 }
+.four_sct .toggle_bar_btn.explore:hover svg .med_fire{
+  fill: black
+}
+
+.musique:hover svg .small{
+  fill: black
+}
+
+.direct:hover svg{
+  stroke-width: 1.5
+}
+
+.game:hover svg .small{
+  fill: black
+}
+.game:hover svg .items{
+  fill: white
+}
+
+.Actu:hover svg .actu_menu_small_rect,
+.Actu:hover svg .bars,
+.Actu:hover svg .plie{
+  fill: white
+}
+.Actu:hover svg .small_rect{
+  fill: black
+}
+
+.sport:hover svg .cup{
+  fill: black
+}
+
+.cult_gnl:hover svg .small_circle{
+  fill: black
+}
+
+.mode:hover svg .mode_rects{
+  fill: black
+}
+
+.five_sct .chaine:hover svg .small_circle{
+  fill: black
+}
+.five_sct .chaine:hover svg .plus{
+  fill: white
+}
+
+.seven_sct .signal_histo:hover svg .inset_flag{
+  fill: black
+}
+
+.toggle_slide_bar h3{
+  padding: 8px 20px;
+}
+
+
+#containt{
+  border: solid 3px yellow;
+  float: left
+  position: relative;
+  width: 100%;
+  height: 100px;
+  float: left 
+} */
