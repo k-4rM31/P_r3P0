@@ -112,7 +112,7 @@ input#search::-webkit-search-cancel-button{
 
 
 .close{
-  /* display: none !important; */
+  display: none;
   position: absolute;
   right: 0;
   padding: 10px;
@@ -126,25 +126,50 @@ input#search::-webkit-search-cancel-button{
   background-color: rgba(207, 207, 207, 0.352);
 }
 
-form:hover label{
+.searchSection form label.active{
   border: 1px solid #3f51b5;
 }
+
+/* form:hover label{
+  border: 1px solid #3f51b5;
+} */
 
 form label:hover .search_icon{
   display: inline-block !important
 }
 
 .search_frame{
-  display: none;
-  /* border: solid 1px red; */
+  /* display: none; */
+  border: solid 1px rgba(186, 186, 186, 0.3);
   width: 40vw; 
-  height: 400px; 
   position: absolute; 
   border-radius: 10px;
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   top: 60px;
-  padding: 0px 10px;
+  padding: 20px 0px 0px 0px;
+}
+.elmt_for_search{
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  gap: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px;
+}
+.li_elmt:hover{
+  background-color: #96969634;
+}
+
+.note_de_rech{
+  float: right;
+  font-size: small;
+  color: rgba(54, 54, 54, 0.461);
+  text-decoration: none;
+  padding: 5px 10px;
 }
 
 form > button{
@@ -183,7 +208,7 @@ form > button{
   position: relative;
 }
 
-.setting:hover .dropdown_content{
+.setting .dropdown_content.show_sett_drop{
   display: block
 }
 
@@ -351,7 +376,7 @@ ul{
   justify-content: center;
   color: #000;
   text-decoration: none;
-  padding: 15px 1px;
+  padding: 15px 5px 15px 3px;
   border-radius: 10px;
   font-size: x-small
 }
@@ -364,7 +389,7 @@ ul{
   background-color: #ccc;
 }
 
-.home:hover svg g{
+.static_bar_btn_active .home svg g{
   fill: black
 }
 
@@ -372,31 +397,32 @@ ul{
   cursor: pointer
 }
 
-.short:hover svg .small_short{
-  fill: black
+.static_bar_btn_active .short svg .small_short{
+  fill: black;
+  fill-opacity: 1;
 }
 
-.short:hover svg .play_icon{
+.static_bar_btn_active .short svg .play_icon{
   fill: white
 }
 
-.Abonnement:hover svg .small_rect{
+.static_bar_btn_active .Abonnement svg .small_rect{
   fill: black
 }
 
-.Abonnement:hover svg .play_icon{
+.static_bar_btn_active .Abonnement svg .play_icon{
   fill: white
 }
 
-.vous:hover svg .small_rect{
+.static_bar_btn_active .vous svg .small_rect{
   fill: black
 }
 
-.vous:hover svg .play_icon{
+.static_bar_btn_active .vous svg .play_icon{
   fill: white
 }
 
-.historique:hover svg{
+.static_bar_btn_active .historique svg{
   stroke-width: 0.5
 } 
 
@@ -418,13 +444,13 @@ ul{
 }
 .toggle_slide_bar::-webkit-scrollbar{
   width: 10px;
-  visibility: hidden
 }
 .toggle_slide_bar::-webkit-scrollbar-thumb{
   background-color: rgb(140, 140, 140);
-  border-radius: 45px
+  border-radius: 45px;
+  visibility: hidden;
 }
-.toggle_slide_bar:hover::-webkit-scrollbar{
+.toggle_slide_bar:hover::-webkit-scrollbar-thumb{
   visibility: visible
 }
 
@@ -456,6 +482,54 @@ ul{
   background-color: #ccc;
 }
 
+.toggle_bar_btn_active.home{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.home svg g{
+  fill: black
+}
+
+.toggle_bar_btn_active.short{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.short svg .small_short{
+  fill: black;
+  fill-opacity: 1;
+}
+
+.toggle_bar_btn_active.short svg .play_icon{
+  fill: white
+}
+
+.toggle_bar_btn_active.Abonnement{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.Abonnement svg .small_rect{
+  fill: black
+}
+
+.toggle_bar_btn_active.Abonnement svg .play_icon{
+  fill: white
+}
+
+.toggle_bar_btn_active.vous{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.vous svg .small_rect{
+  fill: black
+}
+
+.toggle_bar_btn_active.vous svg .play_icon{
+  fill: white
+}
+
+.toggle_bar_btn_active.historique{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.historique svg{
+  stroke-width: 0.5
+} 
+
 .three_sct{
   border-bottom: solid 2px rgb(187, 187, 197);
   display: flex;
@@ -468,57 +542,90 @@ ul{
   margin: 10px 0px 5px 0px;
 }
 
-.four_sct .toggle_bar_btn.explore:hover svg .small_fire{
+.toggle_bar_btn_active.explore{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.explore svg .small_fire{
   fill: white
 }
-.four_sct .toggle_bar_btn.explore:hover svg .med_fire{
+.toggle_bar_btn_active.explore svg .med_fire{
+  fill: black
+}
+.toggle_bar_btn_active.musique{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.musique svg .small{
   fill: black
 }
 
-.musique:hover svg .small{
-  fill: black
+.toggle_bar_btn_active.direct{
+  background-color: #d3d3d35d;
 }
-
-.direct:hover svg{
+.toggle_bar_btn_active.direct svg{
   stroke-width: 1.5
 }
 
-.game:hover svg .small{
+.toggle_bar_btn_active.game{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.game svg .small{
   fill: black
 }
-.game:hover svg .items{
+.toggle_bar_btn_active.game svg .items{
   fill: white
 }
 
-.Actu:hover svg .actu_menu_small_rect,
-.Actu:hover svg .bars,
-.Actu:hover svg .plie{
+.toggle_bar_btn_active.Actu{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.Actu svg .actu_menu_small_rect,
+.toggle_bar_btn_active.Actu svg .bars,
+.toggle_bar_btn_active.Actu svg .plie{
   fill: white
 }
-.Actu:hover svg .small_rect{
+.toggle_bar_btn_active.Actu svg .small_rect{
   fill: black
 }
 
-.sport:hover svg .cup{
+.toggle_bar_btn_active.sport{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.sport svg .cup{
   fill: black
 }
 
-.cult_gnl:hover svg .small_circle{
+.toggle_bar_btn_active.cult_gnl{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.cult_gnl svg .small_circle{
   fill: black
 }
 
-.mode:hover svg .mode_rects{
+.toggle_bar_btn_active.mode{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.mode svg .mode_rects{
   fill: black
 }
 
-.five_sct .chaine:hover svg .small_circle{
+.toggle_bar_btn_active.chaine{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.chaine svg .small_circle{
   fill: black
 }
-.five_sct .chaine:hover svg .plus{
+.toggle_bar_btn_active.chaine svg .plus{
   fill: white
 }
 
-.seven_sct .signal_histo:hover svg .inset_flag{
+.toggle_bar_btn_active.signal_histo{
+  background-color: #d3d3d35d;
+}
+.toggle_bar_btn_active.seven_sct .signal_histo svg .inset_flag{
+  fill: black
+}
+
+.toggle_bar_btn_active.signal_histo svg .inset_flag{
   fill: black
 }
 
@@ -529,7 +636,7 @@ ul{
 }
 
 .toggle_slide_bar h3{
-  padding: 8px 20px;
+  padding: 8px 15px;
 }
 
 .show_toggleBar{
