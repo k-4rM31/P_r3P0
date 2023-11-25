@@ -7,17 +7,29 @@ const burger = document.querySelector('.burger')
 const toggle_sidebar = document.querySelector('.toggle_slide_bar')
 const static_sidebar = document.querySelector('.static_slide_bar')
 const containt = document.querySelector('#containt')
+const recupPropositioBar = document.querySelector('.propositionBar')
+const recupIframe = document.querySelector('iframe')
+
+
 burger.addEventListener('click', (e) => {
     toggle_sidebar.classList.toggle('show_toggleBar')
     if(toggle_sidebar.classList.contains('show_toggleBar')){
         containt.style.marginLeft = '250px'
         static_sidebar.style.display = 'none'
+        recupIframe.style.width = '320px'
+        recupIframe.style.height = '180px'
+
         console.log('appaer')
     }else{
         containt.style.marginLeft = '0px'
         static_sidebar.style.display = 'block'
+        recupIframe.style.width = '400px'
+        recupIframe.style.height = '250px'
         console.log('disappaer')
     }
+})
+recupPropositioBar.addEventListener(('scroll'),(e) => {
+    console.log(e, [recupPropositioBar])
 })
 
 const search_cancel_btn = document.querySelector('.close')

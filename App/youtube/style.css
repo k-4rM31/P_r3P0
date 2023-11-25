@@ -23,7 +23,7 @@ nav{
   justify-content: space-around;
   /* border: solid 1px lime; */
   gap: 130px;
-  padding: 20px 0px;
+  padding: 10px 0px;
 }
 
 /* nav>div{
@@ -87,7 +87,7 @@ nav{
 }
 
 .searchSection form label{
-  width: 40vw;
+  width: 550px;
   display: flex;
   align-items: center;
   border: solid 2px #ccc;
@@ -139,9 +139,9 @@ form label:hover .search_icon{
 }
 
 .search_frame{
-  /* display: none; */
+  display: none;
   border: solid 1px rgba(186, 186, 186, 0.3);
-  width: 40vw; 
+  width: 550px; 
   position: absolute; 
   border-radius: 10px;
   background-color: #fff;
@@ -323,7 +323,7 @@ form > button{
 /* ACCOUNT */
 
 .account a:hover{
-  background-color: rgba(0, 0, 255, 0.345);
+  background-color: rgba(0, 123, 255, 0.262);
 }
 
 .account a{
@@ -349,7 +349,7 @@ form > button{
 main{
   /* border: solid 3px blue ; */
   position: absolute;
-  top: 82px;
+  top: 62px;
   bottom: 0;
   right: 0;
   left: 0;
@@ -657,14 +657,115 @@ ul{
 }
 
 #containt{
+  position: relative;
   /* border: solid 3px yellow; */
   transition: margin-left .3s ease;
   width: 100%;
   height: 100%;
+  padding: 0px 20px;
+}
+
+.propositionBar{
+  position: absolute;
+  width: calc(100% - 20px);
+  /* width: 100%; */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: solid 1px #d3d3d35d;
+  border-bottom: solid 1px #d3d3d35d;
+  overflow-x: auto;
+  z-index: 1;
+}
+.propositionBar::after{
+  content: '';
+  position: fixed;
+  right: 0px;
+  padding: 20px;
+  box-shadow: -50px 0px 3px -30px rgb(255, 255, 255) inset
+}
+.propositionBar::-webkit-scrollbar{
+  display: none
+}
+.propositionBar .proposition{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #d3d3d35d;
+  cursor: pointer;
+  z-index: -1
+}
+.proposition:hover{
+  background-color: #d3d3d3ad
+}
+.proposition:not(.first){
+  margin-left: 15px;
+}
+.proposition.on{
+  background-color: #000;
+  color: #fff
 }
 
 
+.videoFrame{
+  position: absolute;
+  border: solid 1px red;
+  left: 0;
+  right: 0;
+  top: 55px;
+  bottom: 0;
+  padding: 10px 30px;
+  display: flex
+}
+.videoFrame .video{
+  border: solid 1px lime;
+  background-color: #fff;
+}
+.video_desc{
+  border: solid 1px red;
+  overflow: hidden;
+  /* display: flex;
+  justify-content: space-between; */
+}
+.icon, .video-info{
+  float: left
+}
+.video-info{
+  margin-left: 15px;
+}
+.video_opt{
+  float: right;
+}
+.video_opt .opt_v{
+  display: block;
+  /* border: solid 1px black; */
+  padding: 5px;
+  border-radius: 50px;
+}
+.opt_v:hover{
+  background-color: #ccc;
+  cursor: pointer
+}
+h4.title{
+  margin-top: 2px;
+}
+.channel_name, .vues{
+  color: #000000d7;
+  font-size: 14px;
+  margin-top: 2px;
+}
+.video_desc .icon img{
+  clip-path: circle(50%);
+  width: 40px;
+}
 
-
+iframe{
+  border-radius: 10px
+}
 
 
